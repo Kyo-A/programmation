@@ -1,0 +1,160 @@
+Fonction ProduitDouble (a : entier ) : entier
+    variable b : entier
+    b ← 2 * a
+    retourne(b)
+FinFonction
+
+Algorithme CalculDouble
+    variables a : entier
+    Début
+        écrire("entrer le nombre ")
+        lire(a)
+        écrire("le double de ", a, "est :", ProduitDouble(a))
+    Fin
+
+Les habitants de Zorglub paient l’impôt selon les règles suivantes :
+
+- les hommes de plus de 20 ans paient l’impôt
+- les femmes paient l’impôt si elles ont entre 18 et 35 ans
+- les autres ne paient pas d’impôt
+
+Le programme demandera donc l’âge et le sexe du Zorglubien, et se prononcera donc 
+ensuite sur le fait que l’habitant est imposable.
+
+Algorithme Imposable ;
+Variable sex en Caractère
+Variable age en Reel
+Variables C1, C2 en Booléen
+Début
+Ecrire "Entrez le sexe (M/F) : "
+Lire sex
+Ecrire "Entrez l’âge: "
+Lire age
+C1 ← sex = "M" ET age > 20
+C2 ← sex = "F" ET (age > 18 ET age < 35)
+Si C1 ou C2 Alors
+  Ecrire "Imposable"
+Sinon
+  Ecrire "Non Imposable"
+FinSi
+Fin
+
+Le programme calculera la somme de N premiers nombres entiers.
+
+N est une valeur CHOISIE par l’utilisateur de l’algorithme
+
+Algorithme Somme ;
+Var I,N,S :entier
+Début
+Ecrire("Donner un entier N")
+Lire(N)
+S ←0
+Pour I allant de 1 à N
+S ←S+I
+FinPour
+Ecrire(‘La somme des’, N,’ premiers nombres est: ’,S) ;
+Fin.
+
+Les élections législatives, en Guignolerie Septentrionale, obéissent à la règle suivante :
+
+lorsque l'un des candidats obtient plus de 50% des suffrages, il est élu dès le premier tour.
+en cas de deuxième tour, peuvent participer uniquement les candidats ayant obtenu au moins 12,5% des voix au premier tour.
+
+Vous devez écrire un algorithme qui permette la saisie des scores de quatre candidats au premier tour. 
+Cet algorithme traitera ensuite le candidat numéro 1 (et uniquement lui) : 
+
+il dira s'il est élu, battu, s'il se trouve en ballottage favorable 
+
+(il participe au second tour en étant arrivé en tête à l'issue du premier tour) ou défavorable 
+(il participe au second tour sans avoir été en tête au premier tour).
+
+Variables A, B, C, D en entier
+Variables C1, C2, C3, C4 en Booléen
+Début
+Ecrire "Entrez les scores des quatre prétendants :"
+Lire A, B, C, D
+C1 ← A > 50
+C2 ← B > 50 ou C > 50 ou D > 50
+C3 ← A >= B et A >= C et A >= D
+C4 ← A >= 12,5
+Si C1 Alors
+  Ecrire “Elu au premier tour"
+Sinonsi C2 ou Non(C4) Alors
+  Ecrire “Battu, éliminé, sorti !!!”
+SinonSi C3 Alors
+  Ecrire "Ballotage favorable"
+Sinon
+  Ecrire "Ballotage défavorable"
+FinSi
+Fin
+
+Une compagnie d'assurance automobile propose à ses clients quatre familles de tarifs identifiables par une couleur, du moins au plus onéreux : tarifs bleu, vert, orange et rouge. 
+
+Le tarif dépend de la situation du conducteur :
+
+- un conducteur de moins de 25 ans et titulaire du permis depuis moins de deux ans, se voit attribuer le tarif rouge, si toutefois il n'a jamais été responsable d'accident. 
+Sinon, la compagnie refuse de l'assurer.
+
+- un conducteur de moins de 25 ans et titulaire du permis depuis plus de deux ans, ou de plus de 25 ans mais titulaire du permis depuis moins de deux ans a le droit au tarif orange 
+s'il n'a jamais provoqué d'accident, au tarif rouge pour un accident, sinon il est refusé.
+
+- un conducteur de plus de 25 ans titulaire du permis depuis plus de deux ans bénéficie du tarif vert s'il n'est à l'origine d'aucun accident et du tarif orange pour un accident, 
+du tarif rouge pour deux accidents, et refusé au-delà
+
+De plus, pour encourager la fidélité des clients acceptés, la compagnie propose un contrat de la couleur immédiatement la plus avantageuse s'il est entré dans la maison depuis plus de cinq ans. 
+Ainsi, s'il satisfait à cette exigence, un client normalement "vert" devient "bleu", un client normalement "orange" devient "vert", et le "rouge" devient orange.
+
+Ecrire l'algorithme permettant de saisir les données nécessaires (sans contrôle de saisie) et de traiter ce problème. Avant de se lancer à corps perdu dans cet exercice, 
+on pourra réfléchir un peu et s'apercevoir qu'il est plus simple qu'il n'en a l'air (cela s'appelle faire une analyse !)
+
+ Variables age, perm, acc, assur en Numérique
+Variables C1, C2, C3 en Booléen
+Variable situ en Caractère
+Début
+Ecrire "Entrez l’âge: "
+Lire age
+Ecrire "Entrez le nombre d'années de permis: "
+Lire perm
+Ecrire "Entrez le nombre d'accidents: "
+Lire acc
+Ecrire "Entrez le nombre d'années d'assurance: "
+Lire assur
+C1 ← age >= 25
+C2 ← perm >= 2
+C3 ← assur > 5
+Si Non(C1) et Non(C2) Alors
+  Si acc = 0 Alors
+    situ ← "Rouge"
+  Sinon
+    situ ← "Refusé"
+  FinSi
+Sinonsi ((Non(C1) et C2) ou (C1 et Non(C2)) Alors
+  Si acc = 0 Alors
+    situ ← "Orange"
+  SinonSi acc = 1 Alors
+    situ ← "Rouge"
+  Sinon
+    situ ← "Refusé"
+  FinSi
+Sinon
+  Si acc = 0 Alors
+    situ ← "Vert"
+  SinonSi acc = 1 Alors
+    situ ← "Orange"
+  SinonSi acc = 2 Alors
+    situ ← "Rouge"
+  Sinon
+    situ ← "Refusé"
+  FinSi
+FinSi
+Si C3 Alors
+  Si situ = "Rouge" Alors
+    situ ← "Orange"
+  SinonSi situ = "Orange" Alors
+    situ ← "Vert"
+  SinonSi situ = "Vert" Alors
+    situ ← "Bleu"
+  FinSi
+FinSi
+Ecrire "Votre situation : ", situ
+Fin

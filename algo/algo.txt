@@ -1,0 +1,67 @@
+Algorithme AffichageNomComplet
+    variables Nom, Prenom, Nom_Complet: chaîne de caractères
+    Début
+        écrire("entrez votre nom")
+        lire(Nom)
+        écrire("entrez votre prénom")
+        lire(Prenom)
+        Nom_Complet ← Nom & Prenom
+        écrire("Votre nom complet est : ", Nom_Complet)
+    Fin
+
+Algorithme CalculDouble
+    variables A, B : entier
+    Début
+        écrire("entrer le nombre ")
+        lire(A)
+        B ← 2 * A
+        écrire("le double de ", A, "est :", B)
+    Fin
+
+Algorithme AffichagePrenom
+    variables prenom : chaîne de caractères
+    Début
+        Ecrire("Quel est votre prenom ?")
+        Lire Prenom
+        Ecrire ("Bonjour ", Prenom, " !")
+    Fin 
+
+
+Algorithme CalculPrixTTC
+    variables nb, pht, ttva, pttc : reel
+    Début
+        Ecrire("Entrez le prix hors taxes :")
+        Lire(pht)
+        Ecrire("Entrez le nombre d’articles :")
+        Lire (nb)
+        Ecrire ("Entrez le taux de TVA :")
+        Lire(ttva)
+        pttc ← nb * pht * (1 + ttva)
+        Ecrire("Le prix toutes taxes est : ", pttc)
+    Fin 
+
+Algorithme AffichagePositif
+    variables n : entier
+    Début
+        Ecrire("Entrez un nombre : ")
+        Lire(n)
+        Si n > 0 Alors
+            Ecrire("Ce nombre est positif")
+        Sinon
+            Ecrire("Ce nombre est négatif")
+        Finsi
+    Fin
+
+Algorithme AffichagePositif2
+    variables n : entier
+    Début
+        Ecrire("Entrez un nombre : ")
+        Lire(n)
+        Si n > 0 Alors
+            Ecrire("Ce nombre est positif")
+        SinonSi n = 0 Alors
+            Ecrire("Ce nombre est null")
+        Sinon
+            Ecrire("Ce nombre est négatif")
+        Finsi
+    Fin

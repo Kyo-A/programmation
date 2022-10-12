@@ -1,0 +1,144 @@
+Algorithme AffichagePositif2
+Variables copies : entier prix : réel
+Début
+    Ecrire ("Nombre de photocopies : ")
+    Lire (copies)
+    Si (copies < 10) Alors 
+        prix ← copies * 0.5
+        Sinon Si (copies > 10) ET (copies < 20) Alors
+            prix ← copies * 0.4
+        Sinon
+            prix ← copies * 0.3
+        Finsi
+    Finsi
+    Ecrire ("Le prix à payer est : ", prix)
+Fin
+
+Algorithme AffichagePositif2
+Variables copies : entier prix : réel
+Début
+    Ecrire ("Nombre de photocopies : ")
+    Lire (copies)
+    SELONQUE
+        copies < 10 : prix ← copies * 0.5
+        copies < 20 : prix ← copies * 0.4
+        SINON :  prix ← copies * 0.3
+    FINSELONQUE
+    Ecrire ("Le prix à payer est : ", prix)
+Fin
+
+Algorithme AffichageTantQue
+Variables N, i en Entier
+Debut
+    Ecrire("Entrez un nombre : ")
+    Lire(N)
+    i ← 0
+    Ecrire("Les 10 nombres suivants sont : ")
+    TantQue(i < 10)
+        i ← i + 1
+        Ecrire(N + 1)
+    FinTantQue
+Fin
+
+Algorithme AffichagePour
+Variables N, i en Entier
+Debut
+    Ecrire("Entrez un nombre : ")
+    Lire(N)
+    Ecrire("Les 10 nombres suivants sont : ")
+    Pour i allant de 1 à 10 (pas de 1)
+        Ecrire(N + i)
+    FinTantQue
+Fin
+
+Algorithme AffichagePour2
+variables N, i, Som : Entier
+Debut
+    Ecrire "Entrez un nombre : "
+    Lire N
+    Som ← 0
+    Pour i allant de 1 à N
+        Som ← Som + i
+    FinPour
+    Ecrire "La somme est : ", Som
+Fin
+
+Algorithme AffichageTantQue2
+Variable N : Entier
+Debut
+N ← 0
+Ecrire("Entrez un nombre entre 1 et 3")
+Lire(N)
+TantQue N < 1 ou N > 3
+    Ecrire("Saisie erronée. Entrez un nombre entre 1 et 3")
+    Lire(N)
+  FinTantQue
+Fin
+
+Algorithme AffichageTantQue3
+Variable N : Entier
+Debut
+Ecrire("Entrez un nombre entre 10 et 20")
+Lire(N)
+TantQue N < 10 ou N > 20
+    Si N < 10 Alors
+        Ecrire "Plus grand !"
+    SinonSi N > 20 Alors
+        Ecrire "Plus petit !"
+    FinSi
+    Ecrire("Saisie erronée. Entrez un nombre entre 10 et 20")
+    Lire(N)
+  FinTantQue
+Fin
+
+
+
+Variables som, i : entier
+Debut
+    som ← 0
+    i ← 1 
+    TantQue(som<= 100)
+        som← som+ i
+        i ← i + 1
+    FinTantQue
+Ecrire (" La valeur cherchée est N= ", i)
+Fin
+
+Variables som, i : entier
+Debut
+    som← 0
+    i ← 0
+    Répéter
+        i ← i + 1
+        som← som+ i
+    Jusqu'à ( som> 100)
+    Ecrire (" La valeur cherchée est N= ", i)
+Fin
+
+
+Variables N, i, PG en Entier
+Debut
+PG ← 0
+Pour i ← 1 à 20
+  Ecrire "Entrez un nombre : "
+  Lire N
+  Si i = 1 ou N > PG Alors
+    PG ← N
+  FinSi
+FinPour
+Ecrire "Le nombre le plus grand était : ", PG
+Fin
+
+
+Variables N, i, F en Entier
+Debut
+Ecrire "Entrez un nombre : "
+Lire N
+F ← 1
+TantQue()
+  F ← F * i
+FinPour
+Ecrire "La factorielle est : ", F
+Fin
+
+
